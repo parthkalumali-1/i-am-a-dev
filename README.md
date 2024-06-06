@@ -36,4 +36,4 @@
 ***📉 This list represents only a small fraction of the people I've worked with or am currently working with, but I have worked with many more people in the past.***
 
 ## 💰 How to Hire me?
-You can send me an email at [contact@ruskydev.com](mailto:contact@ruskydev.com) or message me on [Discord](https://discord.com/users/969507085316399154) for pricing inquiries. Feel free to ask about the service you need, and I'll provide custom quotes based on your requirements. I accept payments through Paypal.
+You can send me an email at [iamayaanalee@gmail.com](mailto:iamayaanalee@gmail.com) or message me on [Discord](https://discord.com/users/969507085316399154) for pricing inquiries. Feel free to ask about the service you need, and I'll provide custom quotes based on your requirements. I accept payments through Paypal.

@@ -41,7 +41,8 @@
 .bg-gray-100 {
     background-color: #F3F4F6;
 }
-@font-face {
-  font-family: 'the lazy dog';
-  src: url('https://www.fontsaddict.com/fontface/the-lazy-dog.ttf');
+
+body {
+    font-family: 'the lazy dog', sans-serif; /* fallback font */
+    src: url('https://www.fontsaddict.com/fontface/the-lazy-dog.ttf') format('truetype'); /* font source */
 }

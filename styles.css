@@ -1,6 +1,7 @@
 body {
     font-family: 'the lazy dog', sans-serif; /* fallback font */
     src: url('https://www.fontsaddict.com/fontface/the-lazy-dog.ttf') format('truetype'); /* font source */
+    background-color: #424549;
 }
 
 .text-sm {
@@ -46,3 +47,4 @@ body {
 .bg-gray-100 {
     background-color: #F3F4F6;
 }
+

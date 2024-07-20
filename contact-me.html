@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Rusky">
+    <meta name="description" content="Hi, I'm Rusky. My real name is Ayaan, and I'm 16 years old from Pakistan. I have skills and experience in development and management for 6 years.">
+    <meta name="keywords" content="rusky, ruskydev, services, discord servers, minecraft servers, management, development">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="RuskyDev" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <title>About Rusky | Contact Me</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://hcaptcha.com/1/api.js" async defer>
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+        }
+    </style>
+
+    <link rel="shortcut icon" href="https://i.imgur.com/iK0e7NI.png" type="image/x-icon">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-black text-white">
+    <nav class="shadow-md w-full">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-bold text-white-900">Rusky</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="./services.html" class="text-white-500 hover:text-white-900">Services</a>
+                        <a href="./partners.html" class="text-white-500 hover:text-white-900">Partners</a>
+                        <a href="./contact-me.html" class="text-white-500 hover:text-white-900">Contact Me</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="navToggle" class="text-white-500 hover:text-white-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-200">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="./services.html" class="block px-3 py-2 rounded-md text-base font-medium text-white-500 hover:text-white-900 hover:bg-white-100">Services</a>
+                <a href="./contact-me.html" class="block px-3 py-2 rounded-md text-base font-medium text-white-500 hover:text-white-900 hover:bg-white-100">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container mx-auto px-4 py-4 max-w-xl">
+        <form action="https://formsubmit.co/iamayaanalee@gmail.com" method="POST" class="flex flex-col items-center justify-center">
+            <div class="mb-4 w-full max-w-md">
+                <label for="name" class="block text-white text-sm font-bold mb-2">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4 w-full max-w-md">
+                <label for="email" class="block text-white text-sm font-bold mb-2">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4 w-full max-w-md">
+                <label for="message" class="block text-white text-sm font-bold mb-2">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Enter your message" required
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+            </div>
+            <button type="submit"
+                class="bg-green-600 hover:bg-green-700 transition duration-300 text-white font-bold py-4 px-24 rounded-full ">Send</button>
+        </form>      
+    </div>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM4E7S9PDJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QM4E7S9PDJ');
+    </script>
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

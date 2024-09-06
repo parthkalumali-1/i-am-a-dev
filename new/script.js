@@ -1,3 +1,13 @@
+function GetDeviceType() {
+    const UserAgent = navigator.userAgent;
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(UserAgent)) {
+        return "tablet";
+    } else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(UserAgent)) {
+        return "mobile";
+    }
+    return "desktop";
+}
+
 function CreateShootingStars() {
     let ShootingStarsInterval;
 
@@ -16,23 +26,31 @@ function CreateShootingStars() {
             star.remove();
         });
     }
+
     function StartShootingStars() {
-        console.log("star spawning started")
+        console.log("Star spawning started");
         ShootingStarsInterval = setInterval(CreateStar, 200);
     }
+
     function StopShootingStars() {
-        console.log("star spawning stopped")
+        console.log("Star spawning stopped");
         clearInterval(ShootingStarsInterval);
     }
-    StartShootingStars();
-    document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-            StopShootingStars();
-        } else {
-            StartShootingStars();
-        }
-    });
+
+    if (GetDeviceType() === "desktop") {
+        StartShootingStars();
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                StopShootingStars();
+            } else {
+                StartShootingStars();
+            }
+        });
+    } else {
+        console.log("shooting stars disabled on mobile/tablet.");
+    }
 }
+
 
 function CreateMouseTrails(e) {
     const trail = document.createElement('div');

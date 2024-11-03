@@ -53,3 +53,9 @@ body {
         transform: scale(2);
     }
 }
+
+@media (max-width: 768px) {
+    .Y9i9ARxJVR {
+        margin-top: -100px;
+    }
+}

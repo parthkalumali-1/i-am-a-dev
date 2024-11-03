@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./libraries/tailwind.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body class="bg-black overflow-hidden flex flex-col h-screen">
     <nav class="bg-black text-white shadow-md pt-4">
@@ -23,28 +24,31 @@
                     <a class="flex-shrink-0 text-3xl font-bold" href="index.html">Rusky</a>
                 </div>
                 <div class="hidden sm:flex sm:space-x-8">   
-                    <a href="" class="text-white hover:text-purple-500 transition duration-500">Home</a>
+                    <a href="./index.html" class="text-white hover:text-purple-500 transition duration-500">Home</a>
                     <a href="./about.html" class="text-white hover:text-purple-500 transition duration-500">About</a>
-                    <a href="./contact.html" class="text-white hover:text-purple-500 transition duration-500">Contact</a>
+                    <a href="" class="text-white hover:text-purple-500 transition duration-500">Contact</a>
                 </div>
             </div>
         </div>
         <div id="MobileNavBar" class="sm:hidden fixed inset-0 bg-black bg-opacity-75 hidden">
             <div class="flex flex-col items-center justify-center h-full space-y-6">
-                <a href="" class="text-white text-4xl hover:text-purple-500 transition duration-500">Home</a>
+                <a href="./index.html" class="text-white text-4xl hover:text-purple-500 transition duration-500">Home</a>
                 <a href="./about.html" class="text-white text-4xl hover:text-purple-500 transition duration-500">About</a>
-                <a href="./contact.html" class="text-white text-4xl hover:text-purple-500 transition duration-500">Contact</a>
+                <a href="" class="text-white text-4xl hover:text-purple-500 transition duration-500">Contact</a>
             </div>
         </div>
     </nav>
-
-    <div class="flex-1 flex items-center justify-center text-center Y9i9ARxJVR">
-        <div class="px-2 md:px-4">
-            <h1 class="text-white text-4xl md:text-4xl mb-4">Hi, I'm <span class="text-purple-600">Ayaan</span>.</h1>
-            <p class="text-white text-2xl md:text-4xl">I'm <span class="text-purple-600 age">0</span> from <span class="text-purple-600">Pakistan</span> with <span class="text-purple-600 yearsofexperience">0</span> years of experience in <span class="text-purple-600">development</span> and <span class="text-purple-600">management</span>.</p>
-            <button onclick="window.location.replace('./about.html')" class="mt-5 px-4 py-1 bg-transparent hover:bg-purple-600 text-white hover:text-white border border-purple-600 hover:border-transparent rounded-full transition duration-500">Learn More</button>
+    
+    <div class="flex-1 flex flex-col items-start text-left overflow-auto py-8 pt-16 sm:pt-24 sm:ml-20 ml-5">
+        <h1 class="text-white text-2xl md:text-4xl mb-4">Email: <a href="mailto:iamayaanalee@gmail.com" class="text-purple-500">iamayaanalee@gmail.com</a></h1>
+        <h2 class="text-white text-2xl md:text-4xl mb-4">Discord Username: <a href="https://discord.com/users/969507085316399154" class="text-purple-500">ruskydev</a></h2>
+        <div class="flex space-x-6 mt-4 text-4xl">
+            <a href="https://x.com/ruskydev" target="_blank" class="text-white hover:text-purple-500"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://instagram.com/ruskydev" target="_blank" class="text-white hover:text-purple-500"><i class="fab fa-instagram"></i></a>
+            <a href="https://discord.gg/MAnvhWJvsC" target="_blank" class="text-white hover:text-purple-500"><i class="fab fa-discord"></i></a>
         </div>
     </div>
+    
     <script src="script.js"></script>
     <script>MobileNavBar(); CreateShootingStars();</script>
 </body>

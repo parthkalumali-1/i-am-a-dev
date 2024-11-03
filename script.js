@@ -27,30 +27,19 @@ function CreateShootingStars() {
         });
     }
 
-    function StartShootingStars() {
-        console.log("Star spawning started");
-        ShootingStarsInterval = setInterval(CreateStar, 200);
-    }
-
-    function StopShootingStars() {
-        console.log("Star spawning stopped");
-        clearInterval(ShootingStarsInterval);
-    }
-
     if (GetDeviceType() === "desktop") {
-        StartShootingStars();
+        ShootingStarsInterval = setInterval(CreateStar, 200);
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
-                StopShootingStars();
+                clearInterval(ShootingStarsInterval);
             } else {
-                StartShootingStars();
+                ShootingStarsInterval = setInterval(CreateStar, 200);
             }
         });
     } else {
-        console.log("shooting stars disabled on mobile/tablet.");
+        return
     }
 }
-
 
 function CreateMouseTrails(e) {
     const trail = document.createElement('div');
@@ -69,8 +58,13 @@ function MobileNavBar() {
     const MobileNavBar = document.getElementById('MobileNavBar');
 
     HamburgerButton.addEventListener('click', () => {
-        MobileNavBar.classList.toggle('hidden');
-        HamburgerButton.classList.toggle('active');
+        if (MobileNavBar.classList.contains('hidden')) {
+            MobileNavBar.classList.remove('hidden');
+            HamburgerButton.classList.add('active');
+        } else {
+            MobileNavBar.classList.add('hidden');
+            HamburgerButton.classList.remove('active');
+        }
     });
 }
 
@@ -118,3 +112,60 @@ setInterval(() => {
         YearsOfExperience.textContent = AutoCalculateYearsOfExperience();
     }
 }, 1000);
+
+function KxoiyDzTwo(id) {
+    const section = document.getElementById(id);
+    const icon = document.getElementById(id + '-icon');
+    section.classList.toggle('hidden');
+    if (section.classList.contains('hidden')) {
+        icon.innerHTML = '<i class="fas fa-plus"></i>';
+    } else {
+        icon.innerHTML = '<i class="fas fa-minus"></i>';
+    }
+}
+
+async function fetchRepos() {
+    const repos = ['convertpng.online', 'discord-bot-template-v14', 'keyboard-sounds', 'PortScanner', 'refreshrate', 'WallMaster', 'Wally'];
+    const username = 'RuskyDev';
+    const repoContainer = document.getElementById('repos');
+    const do_not_use_this_token = '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';
+
+    for (let repo of repos) {
+        try {
+            const response = await fetch(`https://api.github.com/repos/${username}/${repo}`, {
+                headers: {
+                    Authorization: `token ${do_not_use_this_token}`
+                }
+            });
+            if (!response.ok) {
+                throw new Error(`Error fetching ${repo}`);
+            }
+            const data = await response.json();
+
+            const repoCard = `
+                <div class="bg-gray-900 p-3 rounded-lg shadow-lg max-w-xs flex flex-col justify-between h-full">
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-1">${data.name}</h3>
+                        <p class="text-gray-300 text-sm mb-3">${data.description || 'No description available'}</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <a href="${data.html_url}" target="_blank" class="text-purple-500 text-sm">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+
+            repoContainer.innerHTML += repoCard;
+        } catch (error) {
+            console.error(error);
+            const errorCard = `
+                <div class="bg-red-800 p-3 rounded-lg shadow-lg max-w-xs">
+                    <h3 class="text-white text-lg font-semibold mb-1">Repo not found</h3>
+                    <p class="text-gray-300 mb-3">An error occurred while fetching this repository. Please try again later.</p>
+                </div>
+            `;
+            repoContainer.innerHTML += errorCard;
+        }
+    }
+}

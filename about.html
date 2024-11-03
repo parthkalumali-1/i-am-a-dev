@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rusky.is-a.dev</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./libraries/tailwind.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-black overflow-hidden flex flex-col h-screen">
+    <nav class="bg-black text-white shadow-md pt-4">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                    <button id="HamburgerButton"
+                        class="inline-flex items-center justify-center p-4 rounded-md text-white z-50">
+                        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start hidden sm:flex">
+                    <a class="flex-shrink-0 text-3xl font-bold" href="index.html">Rusky</a>
+                </div>
+                <div class="hidden sm:flex sm:space-x-8">
+                    <a href="./index.html" class="text-white hover:text-purple-500 transition duration-500">Home</a>
+                    <a href="./about.html" class="text-white hover:text-purple-500 transition duration-500">About</a>
+                    <a href="./contact.html"
+                        class="text-white hover:text-purple-500 transition duration-500">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div id="MobileNavBar" class="sm:hidden fixed inset-0 bg-black bg-opacity-75 hidden">
+            <div class="flex flex-col items-center justify-center h-full space-y-6">
+                <a href="./index.html" class="text-white text-4xl hover:text-purple-500 transition duration-500">Home</a>
+                <a href=""
+                    class="text-white text-4xl hover:text-purple-500 transition duration-500">About</a>
+                <a href="./contact.html"
+                    class="text-white text-4xl hover:text-purple-500 transition duration-500">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="flex-1 flex flex-col items-start text-left overflow-auto py-8 pt-16 sm:pt-24 sm:ml-20 ml-5">
+        <div class="text-white text-2xl mb-16">
+            <h2 class="text-white text-5xl font-semibold mb-8">Tech Stack</h2>
+
+            <div class="flex items-center mb-8 flex-wrap">
+                <div class="flex space-x-2">
+                    <img src="https://skillicons.dev/icons?i=javascript" alt="Javascript Logo" class="w-12 h-12">
+                    <img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js Logo" class="w-12 h-12">
+                    <img src="https://skillicons.dev/icons?i=python" alt="Python Logo" class="w-12 h-12">
+                    <img src="https://skillicons.dev/icons?i=java" alt="Java Logo" class="w-12 h-12">
+                </div>
+            </div>
+
+            <div class="flex items-center mb-8 flex-wrap">
+                <div class="flex space-x-2">
+                    <img src="https://skillicons.dev/icons?i=typescript" alt="Typescript Logo" class="w-12 h-12">
+                    <img src="https://skillicons.dev/icons?i=react" alt="React Logo" class="w-12 h-12">
+                    <img src="https://skillicons.dev/icons?i=tailwind" alt="TailwindCSS Logo" class="w-12 h-12">
+                    <img src="https://skillicons.dev/icons?i=electron" alt="Electron Logo" class="w-12 h-12">
+                    <img src="https://skillicons.dev/icons?i=androidstudio" alt="React Logo" class="w-12 h-12">
+                    <img src="https://skillicons.dev/icons?i=kotlin" alt="Kotlin Logo" class="w-12 h-12">
+                </div>
+            </div>
+
+            <div class="flex items-center mb-8 flex-wrap">
+                <div class="flex space-x-2">
+                    <img src="https://skillicons.dev/icons?i=mysql" alt="MySQL Logo" class="w-12 h-12">
+                    <img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite Logo" class="w-12 h-12">
+                    <img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB Logo" class="w-12 h-12">
+                </div>
+            </div>
+
+            <div class="flex items-center mb-8 flex-wrap">
+                <div class="flex space-x-2">
+                    <img src="https://skillicons.dev/icons?i=docker" alt="Docker Logo" class="w-12 h-12">
+                    <img src="https://skillicons.dev/icons?i=ubuntu" alt="Ubuntu Logo" class="w-12 h-12">
+                    <img src="https://skillicons.dev/icons?i=bash" alt="Bash Logo" class="w-12 h-12">
+                    <img src="https://skillicons.dev/icons?i=debian" alt="Debian Logo" class="w-12 h-12">
+                </div>
+            </div>
+
+            <h2 class="text-white text-5xl font-semibold mb-8">Repositories</h2>
+            <div id="repos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            <br> <!-- i know im too lazy-->
+            <h2 class="text-white text-5xl font-semibold mb-8">Experience</h2>
+        <div class="mb-6">
+        <h3 class="text-xl font-bold mb-4 cursor-pointer flex items-center" onclick="KxoiyDzTwo('discord')">
+            <span id="discord-icon" class="mr-2"><i class="fas fa-plus"></i></span> 🔵 Experience with Discord Servers
+        </h3>
+    <ul id="discord" class="hidden list-disc ml-6 mb-4">
+        <li class="mb-2"><strong>Founder</strong> @ <a href="https://discord.gg/mamzYyc8uE" class="text-blue-500">Rapid Servers</a> (100+ Members • 10+ Clients)</li>
+        <li class="mb-2"><strong>Co-Founder</strong> @ <a href="https://discord.gg/NbmWHywm4p" class="text-blue-500">J4J’s Coin Shop</a> (600+ Members)</li>
+        <li class="mb-2"><strong>Community Manager</strong> @ <a href="https://discord.com/invite/GmN7DcdNHN" class="text-blue-500">Thunder Rayz</a> (1100+ Members)</li>
+        <li class="mb-2"><strong>Head Management</strong> @ <a href="https://discord.gg/vF4QrHvTgg" class="text-blue-500">Server Smiths</a> (100+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Event Manager</strong> @ <a href="https://discord.gg/mythpat" class="text-blue-500">Mythpat</a> (400,000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Administrator</strong> @ Dusk Vanilla (100+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Administrator</strong> @ GodSpunky Network (6000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Administrator</strong> @ AtlasMC (3000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Administrator</strong> @ <a href="https://discord.com/invite/j2xTVard5N" class="text-blue-500">Maze</a> (2000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Administrator</strong> @ MelonMC (2000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Administrator</strong> @ <a href="https://discord.gg/D9vRqEdWnQ" class="text-blue-500">NXTDON</a> (2000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Discord Manager</strong> @ KingsMC (200+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Junior Developer</strong> @ <a href="https://discord.gg/gojugang" class="text-blue-500">GOJU GANG</a> (24,000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Senior Moderator</strong> @ MineMate (300+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Head Moderator</strong> @ <a href="https://discord.gg/nizgamer" class="text-blue-500">Niz Gamer</a> (22,000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Moderator</strong> @ <a href="https://discord.gg/dcwolfplayz" class="text-blue-500">DCWOLF Playz Corner</a> (1000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Moderator</strong> @ <a href="https://discord.gg/2Nk4a5KZe7" class="text-blue-500">Fynox Gaming</a> (3000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Moderator</strong> @ <a href="https://discord.gg/96mSCmudyp" class="text-blue-500">HCL Playz</a> (1000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Moderator</strong> @ <a href="https://discord.gg/oyesxd" class="text-blue-500">OyesXD's Nation</a> (2000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Moderator</strong> @ <a href="https://discord.gg/unboundsky" class="text-blue-500">Unbound Sky</a> (11,000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Junior Moderator</strong> @ <a href="https://discord.gg/game-beat-1052956863492259891" class="text-blue-500">GAME BEAT</a> (6000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Helper</strong> @ <a href="https://discord.gg/impendmc" class="text-blue-500">Impend Network</a> (6000+ Members / 100 avg in-game Players) • Resigned</li>
+        <li class="mb-2"><strong>Support</strong> @ <a href="https://discord.com/invite/jUwawB5uBP" class="text-blue-500">MooNodes</a> (3000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Staff</strong> @ <a href="https://discord.gg/join4join" class="text-blue-500">Join4Join</a> (9000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Staff</strong> @ Reward’s Hometown (11,000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Network Staff</strong> @ <a href="https://discord.gg/spunkyinsaan" class="text-blue-500">Spunky Insaan</a> (42,000+ Members) • Resigned</li>
+        <li class="mb-2"><strong>Creation Team</strong> @ <a href="https://discord.gg/creatorsuniverse" class="text-blue-500">Creators Universe</a> (300+ Members) • Resigned</li>
+        <br>
+        <p>If any of the links are not working or any information is incorrect, please feel free to contact me on Discord at <a href="https://discord.com/users/969507085316399154" class="text-blue-500">ruskydev</a>.</p>
+    </ul>
+</div>
+<div class="mb-6">
+    <h3 class="text-xl font-bold mb-4 cursor-pointer flex items-center" onclick="KxoiyDzTwo('minecraft')">
+        <span id="minecraft-icon" class="mr-2"><i class="fas fa-plus"></i></span> 🟢 Experience with Minecraft Servers
+    </h3>
+    <ul id="minecraft" class="hidden list-disc ml-6 mb-4">
+        <li class="mb-2"><strong>Founder</strong> @ ethereumbox.aternos.me (30+ Active Players) • Server Closed</li>
+        <li class="mb-2"><strong>Founder</strong> @ leafsteal.uk.to (20+ Active Players) • Server Closed</li>
+        <li class="mb-2"><strong>Co-Founder</strong> @ play.hogopogo.in (30+ Active Players) • Server Closed</li>
+        <li class="mb-2"><strong>Junior Developer</strong> @ play.goju-network.fun (20+ Active Players) • Resigned</li>
+        <li class="mb-2"><strong>Administrator</strong> @ arexorpvp.aternos.me (20+ Active Players) • Resigned</li>
+        <li class="mb-2"><strong>Administrator</strong> @ play.godspunky.in (? Active Players) • Resigned</li>
+        <li class="mb-2"><strong>Senior Moderator</strong> @ play.minemate.fun (40+ Active Players) • Resigned</li>
+        <li class="mb-2"><strong>Helper</strong> @ play.impendmc.net (100+ Active Players) • Resigned</li>
+        <br>
+        <p>I know my experience seems low, but trust me, I have gained a lot of knowledge from working mostly on <span class="text-blue-400">Hogo</span><span class="text-red-500">Pogo</span> for two years.</p>
+    </ul>
+</div>
+
+    <script src="script.js"></script>
+    <script>MobileNavBar(); CreateShootingStars(); fetchRepos();</script>
+</body>
+</html>

@@ -128,7 +128,7 @@ async function fetchRepos() {
     const repos = ['convertpng.online', 'discord-bot-template-v14', 'keyboard-sounds', 'PortScanner', 'refreshrate', 'WallMaster', 'Wally'];
     const username = 'RuskyDev';
     const repoContainer = document.getElementById('repos');
-    const do_not_use_this_token = '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';
+    const do_not_use_this_token = '${{secrets.TOKEN}}';
 
     for (let repo of repos) {
         try {

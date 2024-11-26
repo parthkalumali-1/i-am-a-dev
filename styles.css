@@ -30,6 +30,46 @@ body {
     animation: MouseTrails 1s forwards;
 }
 
+.tooltip {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+    padding: 3px 6px;
+    border-radius: 3px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s;
+    max-width: fit-content;
+    text-align: center;
+    white-space: nowrap; 
+}
+
+.tooltip:hover::after,
+.tooltip:focus::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .tooltip::after {
+        font-size: 0.8rem;
+        padding: 2px 4px;
+        max-width: fit-content;
+    }
+}
+
+  
+
 @keyframes ShootingStars {
     from {
         opacity: 1;

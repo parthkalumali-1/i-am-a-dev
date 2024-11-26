@@ -87,7 +87,7 @@ function AutoCalculateAge() {
 }
 
 function AutoCalculateYearsOfExperience() {
-    const YearsOfExperienceDate = new Date(2018, 0, 1); // January 1, 2018
+    const YearsOfExperienceDate = new Date(2019, 0, 1); // January 1, 2019
     const today = new Date();
     let years = today.getFullYear() - YearsOfExperienceDate.getFullYear();
 

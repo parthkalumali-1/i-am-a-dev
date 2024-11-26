@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,21 +10,25 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body class="bg-black overflow-hidden flex flex-col h-screen">
     <nav class="bg-black text-white shadow-md pt-4">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
                 <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
-                    <button id="HamburgerButton" class="inline-flex items-center justify-center p-4 rounded-md text-white z-50">
-                        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    <button id="HamburgerButton"
+                        class="inline-flex items-center justify-center p-4 rounded-md text-white z-50">
+                        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
                     </button>
                 </div>
                 <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start hidden sm:flex">
                     <a class="flex-shrink-0 text-3xl font-bold" href="index.html">Rusky</a>
                 </div>
-                <div class="hidden sm:flex sm:space-x-8">   
+                <div class="hidden sm:flex sm:space-x-8">
                     <a href="./index.html" class="text-white hover:text-purple-500 transition duration-500">Home</a>
                     <a href="./about.html" class="text-white hover:text-purple-500 transition duration-500">About</a>
                     <a href="" class="text-white hover:text-purple-500 transition duration-500">Contact</a>
@@ -32,24 +37,40 @@
         </div>
         <div id="MobileNavBar" class="sm:hidden fixed inset-0 bg-black bg-opacity-75 hidden">
             <div class="flex flex-col items-center justify-center h-full space-y-6">
-                <a href="./index.html" class="text-white text-4xl hover:text-purple-500 transition duration-500">Home</a>
-                <a href="./about.html" class="text-white text-4xl hover:text-purple-500 transition duration-500">About</a>
+                <a href="./index.html"
+                    class="text-white text-4xl hover:text-purple-500 transition duration-500">Home</a>
+                <a href="./about.html"
+                    class="text-white text-4xl hover:text-purple-500 transition duration-500">About</a>
                 <a href="" class="text-white text-4xl hover:text-purple-500 transition duration-500">Contact</a>
             </div>
         </div>
     </nav>
-    
+
     <div class="flex-1 flex flex-col items-start text-left overflow-auto py-8 pt-16 sm:pt-24 sm:ml-20 ml-5">
-        <h1 class="text-white text-2xl md:text-4xl mb-4">Email: <a href="mailto:iamayaanalee@gmail.com" class="text-purple-500">iamayaanalee@gmail.com</a></h1>
-        <h2 class="text-white text-2xl md:text-4xl mb-4">Discord Username: <a href="https://discord.com/users/969507085316399154" class="text-purple-500">ruskydev</a></h2>
+        <h1 class="text-white text-2xl md:text-4xl mb-4">Email: <a href="mailto:iamayaanalee@gmail.com"
+                class="text-purple-500">iamayaanalee@gmail.com</a></h1>
+        <h2 class="text-white text-2xl md:text-4xl mb-4">Discord Username: <a
+                href="https://discord.com/users/969507085316399154" class="text-purple-500">ruskydev</a></h2>
         <div class="flex space-x-6 mt-4 text-4xl">
-            <a href="https://x.com/ruskydev" target="_blank" class="text-white hover:text-purple-500"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://instagram.com/ruskydev" target="_blank" class="text-white hover:text-purple-500"><i class="fab fa-instagram"></i></a>
-            <a href="https://discord.gg/MAnvhWJvsC" target="_blank" class="text-white hover:text-purple-500"><i class="fab fa-discord"></i></a>
+            <a href="https://x.com/ruskydev" target="_blank" class="text-white hover:text-purple-500"><i
+                    class="fab fa-x-twitter"></i></a>
+            <a href="https://instagram.com/ruskydev" target="_blank" class="text-white hover:text-purple-500"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://discord.gg/MAnvhWJvsC" target="_blank" class="text-white hover:text-purple-500"><i
+                    class="fab fa-discord"></i></a>
         </div>
     </div>
-    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM4E7S9PDJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QM4E7S9PDJ');
+    </script>
     <script src="script.js"></script>
     <script>MobileNavBar(); CreateShootingStars();</script>
 </body>
+
 </html>

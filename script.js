@@ -113,13 +113,6 @@ setInterval(() => {
     }
 }, 1000);
 
-document.querySelectorAll('.tooltip').forEach(function(element) {
-    element.addEventListener('click', function() {
-      const tooltip = element.querySelector('::after');
-      tooltip.style.visibility = tooltip.style.visibility === 'visible' ? 'hidden' : 'visible';
-    });
-  });
-  
 //function KxoiyDzTwo(id) {
 //    const section = document.getElementById(id);
 //    const icon = document.getElementById(id + '-icon');

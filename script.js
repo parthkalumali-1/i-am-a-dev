@@ -41,6 +41,39 @@ function CreateShootingStars() {
     }
 }
 
+function CreateFallingStars() {
+    let FallingStarsInterval;
+
+    function CreateStar() {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.width = '2px';
+        star.style.height = '2px';
+        star.style.left = Math.random() * window.innerWidth + 'px';
+        star.style.top = '0px';
+        star.style.animation = `FallingStars ${Math.random() * 3 + 2}s linear`;
+
+        document.body.appendChild(star);
+
+        star.addEventListener('animationend', () => {
+            star.remove();
+        });
+    }
+
+    if (GetDeviceType() === "desktop") {
+        FallingStarsInterval = setInterval(CreateStar, 100);
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                clearInterval(FallingStarsInterval);
+            } else {
+                FallingStarsInterval = setInterval(CreateStar, 100);
+            }
+        });
+    } else {
+        return;
+    }
+}
+
 function CreateMouseTrails(e) {
     const trail = document.createElement('div');
     trail.classList.add('trail');

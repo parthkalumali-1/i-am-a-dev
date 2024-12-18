@@ -146,13 +146,13 @@ setInterval(() => {
     }
 }, 1000);
 
-//function KxoiyDzTwo(id) {
-//    const section = document.getElementById(id);
-//    const icon = document.getElementById(id + '-icon');
-//    section.classList.toggle('hidden');
-//    if (section.classList.contains('hidden')) {
-//        icon.innerHTML = '<i class="fas fa-plus"></i>';
-//    } else {
-//        icon.innerHTML = '<i class="fas fa-minus"></i>';
-//    }
-//}
+function KxoiyDzTwo(id) {
+   const section = document.getElementById(id);
+   const icon = document.getElementById(id + '-icon');
+   section.classList.toggle('hidden');
+   if (section.classList.contains('hidden')) {
+       icon.innerHTML = '<i class="fas fa-plus"></i>';
+   } else {
+       icon.innerHTML = '<i class="fas fa-minus"></i>';
+   }
+}

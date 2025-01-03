@@ -1,8 +1,9 @@
 @font-face {
     font-family: 'Simple Handmade';
-    src: url('./fonts/SimpleHandmade.ttf') format('truetype');
+    src: url('./fonts/SimpleHandmade.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 body {

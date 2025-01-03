@@ -156,3 +156,23 @@ function KxoiyDzTwo(id) {
        icon.innerHTML = '<i class="fas fa-minus"></i>';
    }
 }
+
+function SendMessage(message) {
+    const webhookURL = 'https://discord.com/api/webhooks/1324685833261023306/pI4UkvXtGSV0LzgsHWsDlrNXOQ2eIBKSCaV4L_w5YwHd5KVKJeEEmGiM5sFnyn0Fzrtd';
+
+    fetch(webhookURL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: message })
+    })
+    .then(response => {
+        if (!response.ok) {
+            console.error('Failed to send message:', response.statusText);
+        }
+    })
+    .catch(error => console.error('Error sending message:', error));
+}
+
+// Main
+CreateShootingStars();
+MobileNavBar();

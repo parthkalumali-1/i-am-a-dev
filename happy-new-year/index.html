@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rusky.is-a.dev</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/b0DAcsx.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        body {
+            margin: 0;
+            height: 100vh;
+            background: 
+                linear-gradient(#0007, #0000),
+                #123;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .clock {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        .time {
+            font-size: 4rem;
+        }
+        .countdown {
+            font-size: 3rem;
+        }
+        .new-year {
+            font-size: 4rem;
+            text-align: center;
+            display: none;
+        }
+        .year {
+            color: #FF6F61;
+            font-weight: bold;
+        }
+        .hours {
+            color: #0044E9;
+            font-weight: bold;
+        }
+        .minutes {
+            color: #FFD700;
+            font-weight: bold;
+        }
+        .seconds {
+            color: #32CD32;
+            font-weight: bold;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .countdown {
+                font-size: 2rem;
+            }
+            .new-year {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fireworks"></div>
+    <div class="clock" id="clock">
+        <div class="countdown" id="countdown">Time left till <span class="year">0000</span><br><span class="hours">24</span> hours <span class="minutes">60</span> minutes <span class="seconds">60</span> seconds left</div>
+    </div>
+    <div class="new-year" id="newYearMessage">
+        Happy New Year 🎉🎉
+    </div>
+    <script>
+        const container = document.querySelector('.fireworks');
+        const fireworks = new Fireworks.default(container, {
+            autoresize: true,
+            opacity: 0.5,
+            acceleration: 1.02,
+            friction: 0.98,
+            gravity: 1.2,
+            particles: 50,
+            traceLength: 3,
+            traceSpeed: 10,
+            explosion: 5,
+            intensity: 20,
+            flickering: 30,
+            lineStyle: 'round',
+            hue: { min: 0, max: 360 },
+            delay: { min: 50, max: 80 },
+            rocketsPoint: { min: 50, max: 50 },
+            lineWidth: {
+                explosion: { min: 1, max: 3 },
+                trace: { min: 1, max: 2 }
+            },
+            brightness: { min: 60, max: 90 },
+            decay: { min: 0.01, max: 0.02 },
+            mouse: { click: false, move: false, max: 1 }
+        });
+
+        let isTestMode = false;
+        let testEndTime;
+        let updateInterval;
+
+        function startTestMode() {
+            if (isTestMode) return;
+            
+            isTestMode = true;
+            testEndTime = new Date().getTime() + 2000;
+            clearInterval(updateInterval);
+            updateInterval = setInterval(updateTime, 1000);
+        }
+
+        function updateTime() {
+            const now = new Date();
+            let timeLeft;
+            let nextYear;
+
+            if (isTestMode) {
+                timeLeft = testEndTime - now.getTime();
+                nextYear = "0000";
+            } else {
+                nextYear = now.getFullYear() + 1;
+                let newYear = new Date(nextYear, 0, 1);
+                timeLeft = newYear - now;
+            }
+
+            if (timeLeft <= 0) {
+                document.getElementById('clock').style.display = 'none';
+                const newYearMessage = document.getElementById('newYearMessage');
+                newYearMessage.style.display = 'block';
+                fireworks.start();
+            }
+
+            const hoursLeft = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutesLeft = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const secondsLeft = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            if (isTestMode) {
+                document.getElementById('countdown').innerHTML = `Time left till <span class="year">${nextYear}</span><br><span class="hours">0</span> hours <span class="minutes">0</span> minutes <span class="seconds">${secondsLeft}</span> seconds left` ;
+            } else {
+                document.getElementById('countdown').innerHTML = `Time left till <span class="year">${nextYear}</span><br><span class="hours">${hoursLeft}</span> hours <span class="minutes">${minutesLeft}</span> minutes <span class="seconds">${secondsLeft}</span> seconds left`;
+            }
+        }
+
+        updateInterval = setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>

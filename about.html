@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rusky.is-a.dev</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./libraries/tailwind.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style">
     <link rel="preload" href="./fonts/SimpleHandmade.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="script.js" as="script">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="bg-black overflow-hidden flex flex-col h-screen">
@@ -41,7 +45,7 @@
             <div class="flex flex-col items-center justify-center h-full space-y-6">
                 <a href="./index.html"
                     class="text-white text-4xl hover:text-purple-500 transition duration-500">Home</a>
-                <a href="" class="text-white text-4xl hover:text-purple-500 transition duration-500">About</a>
+                <a href="./about.html" class="text-white text-4xl hover:text-purple-500 transition duration-500">About</a>
                 <a href="./contact.html"
                     class="text-white text-4xl hover:text-purple-500 transition duration-500">Contact</a>
             </div>
@@ -77,6 +81,10 @@
                     <img src="https://skillicons.dev/icons?i=postman" alt="Cloudflare" title="Cloudflare" class="w-12 h-12 sm:w-16 sm:h-16">
                     <img src="https://skillicons.dev/icons?i=html" alt="HTML" title="HTML" class="w-12 h-12 sm:w-16 sm:h-16">
                     <img src="https://skillicons.dev/icons?i=css" alt="CSS" title="CSS" class="w-12 h-12 sm:w-16 sm:h-16">
+                    <img src="https://go-skill-icons.vercel.app/api/icons?i=mermaid" alt="Mermaid" title="Mermaid" class="w-12 h-12 sm:w-16 sm:h-16">
+                    <img src="https://go-skill-icons.vercel.app/api/icons?i=discordjs" alt="DiscordJS" title="DiscordJS" class="w-12 h-12 sm:w-16 sm:h-16">
+                    <img src="https://go-skill-icons.vercel.app/api/icons?i=ngrok" alt="ngrok" title="ngrok" class="w-12 h-12 sm:w-16 sm:h-16">
+                    <img src="https://go-skill-icons.vercel.app/api/icons?i=reactnative" alt="React Native" title="React Native" class="w-12 h-12 sm:w-16 sm:h-16">
                 </div>
             </div>
             
@@ -84,88 +92,31 @@
             <h2 class="text-white text-5xl font-semibold mb-8">Projects</h2>
             <div id="projects" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <p>I'm not currently working on any projects.</p>
-            </div>
-            
-            <!-- 
-<div
-                    class="bg-transparent text-white border border-purple-600 rounded-md p-3 sm:p-4 max-w-xs sm:max-w-sm flex flex-col justify-between h-full hover:text-purple-400 hover:border-purple-300 transition duration-500">
+
+            <!--
+                </div>
+                    <div class="bg-transparent text-white border border-purple-600 rounded-md p-3 sm:p-4 max-w-xs sm:max-w-sm flex flex-col justify-between h-full hover:text-purple-400 hover:border-purple-300 transition duration-500">
                     <div>
                         <h3 class="text-white text-xl sm:text-2xl font-semibold mb-2">convertpng.online</h3>
                         <p class="text-gray-300 text-sm sm:text-base mb-4">Easily change your PNG images to other formats like JPG, BMP, WEBP, TIFF, ICO, AVIF, and JPEG. Our online tool is fast and gives you good quality images.</p>
                     </div>
                     <div class="flex items-center justify-between mt-4">
-                        <a href="https://convertpng.online" target="_blank"
-                            class="text-purple-500 text-base sm:text-lg hover:text-purple-200 transition duration-500">
+                        <a href="https://convertpng.online" target="_blank" class="text-purple-500 text-base sm:text-lg hover:text-purple-200 transition duration-500">
                             <i class="fas fa-external-link-alt"></i> View Website
                         </a>
                     </div>
                 </div>
             -->
-            <!--<br>
-            <h2 class="text-white text-5xl font-semibold mb-8">Experience</h2>
-        <div class="mb-6">
-        <h3 class="text-xl font-bold mb-4 cursor-pointer flex items-center" onclick="KxoiyDzTwo('discord')">
-            <span id="discord-icon" class="mr-2"><i class="fas fa-plus"></i></span> 🔵 Experience with Discord Servers
-        </h3>
-    <ul id="discord" class="hidden list-disc ml-6 mb-4">
-        <li class="mb-2"><strong>Founder</strong> @ <a href="https://discord.gg/mamzYyc8uE" class="text-blue-500">Rapid Servers</a> (100+ Members • 10+ Clients)</li>
-        <li class="mb-2"><strong>Co-Founder</strong> @ <a href="https://discord.gg/NbmWHywm4p" class="text-blue-500">J4J’s Coin Shop</a> (600+ Members)</li>
-        <li class="mb-2"><strong>Community Manager</strong> @ <a href="https://discord.com/invite/GmN7DcdNHN" class="text-blue-500">Thunder Rayz</a> (1100+ Members)</li>
-        <li class="mb-2"><strong>Head Management</strong> @ <a href="https://discord.gg/vF4QrHvTgg" class="text-blue-500">Server Smiths</a> (100+ Members)</li>
-        <li class="mb-2"><strong>Event Manager</strong> @ <a href="https://discord.gg/mythpat" class="text-blue-500">Mythpat</a> (400,000+ Members)</li>
-        <li class="mb-2"><strong>Administrator</strong> @ Dusk Vanilla (100+ Members)</li>
-        <li class="mb-2"><strong>Administrator</strong> @ GodSpunky Network (6000+ Members)</li>
-        <li class="mb-2"><strong>Administrator</strong> @ AtlasMC (3000+ Members)</li>
-        <li class="mb-2"><strong>Administrator</strong> @ <a href="https://discord.com/invite/j2xTVard5N" class="text-blue-500">Maze</a> (2000+ Members)</li>
-        <li class="mb-2"><strong>Administrator</strong> @ MelonMC (2000+ Members)</li>
-        <li class="mb-2"><strong>Administrator</strong> @ <a href="https://discord.gg/D9vRqEdWnQ" class="text-blue-500">NXTDON</a> (2000+ Members)</li>
-        <li class="mb-2"><strong>Discord Manager</strong> @ KingsMC (200+ Members)</li>
-        <li class="mb-2"><strong>Junior Developer</strong> @ <a href="https://discord.gg/gojugang" class="text-blue-500">GOJU GANG</a> (24,000+ Members)</li>
-        <li class="mb-2"><strong>Senior Moderator</strong> @ MineMate (300+ Members)</li>
-        <li class="mb-2"><strong>Head Moderator</strong> @ <a href="https://discord.gg/nizgamer" class="text-blue-500">Niz Gamer</a> (22,000+ Members)</li>
-        <li class="mb-2"><strong>Moderator</strong> @ <a href="https://discord.gg/dcwolfplayz" class="text-blue-500">DCWOLF Playz Corner</a> (1000+ Members)</li>
-        <li class="mb-2"><strong>Moderator</strong> @ <a href="https://discord.gg/2Nk4a5KZe7" class="text-blue-500">Fynox Gaming</a> (3000+ Members)</li>
-        <li class="mb-2"><strong>Moderator</strong> @ <a href="https://discord.gg/96mSCmudyp" class="text-blue-500">HCL Playz</a> (1000+ Members)</li>
-        <li class="mb-2"><strong>Moderator</strong> @ <a href="https://discord.gg/oyesxd" class="text-blue-500">OyesXD's Nation</a> (2000+ Members)</li>
-        <li class="mb-2"><strong>Moderator</strong> @ <a href="https://discord.gg/unboundsky" class="text-blue-500">Unbound Sky</a> (11,000+ Members)</li>
-        <li class="mb-2"><strong>Junior Moderator</strong> @ <a href="https://discord.gg/game-beat-1052956863492259891" class="text-blue-500">GAME BEAT</a> (6000+ Members)</li>
-        <li class="mb-2"><strong>Helper</strong> @ <a href="https://discord.gg/impendmc" class="text-blue-500">Impend Network</a> (6000+ Members / 100 avg in-game Players)</li>
-        <li class="mb-2"><strong>Support</strong> @ <a href="https://discord.com/invite/jUwawB5uBP" class="text-blue-500">MooNodes</a> (3000+ Members)</li>
-        <li class="mb-2"><strong>Staff</strong> @ <a href="https://discord.gg/join4join" class="text-blue-500">Join4Join</a> (9000+ Members)</li>
-        <li class="mb-2"><strong>Staff</strong> @ Reward’s Hometown (11,000+ Members)</li>
-        <li class="mb-2"><strong>Network Staff</strong> @ <a href="https://discord.gg/spunkyinsaan" class="text-blue-500">Spunky Insaan</a> (42,000+ Members)</li>
-        <li class="mb-2"><strong>Creation Team</strong> @ <a href="https://discord.gg/creatorsuniverse" class="text-blue-500">Creators Universe</a> (300+ Members)</li>
-        <br>
-        <p>If any of the links are not working or any information is incorrect, please feel free to contact me on Discord at <a href="https://discord.com/users/969507085316399154" class="text-blue-500">ruskydev</a>.</p>
-    </ul>
-</div>
-<div class="mb-6">
-    <h3 class="text-xl font-bold mb-4 cursor-pointer flex items-center" onclick="KxoiyDzTwo('minecraft')">
-        <span id="minecraft-icon" class="mr-2"><i class="fas fa-plus"></i></span> 🟢 Experience with Minecraft Servers
-    </h3>
-    <ul id="minecraft" class="hidden list-disc ml-6 mb-4">
-        <li class="mb-2"><strong>Founder</strong> @ ethereumbox.aternos.me (30+ Active Players) • Server Closed</li>
-        <li class="mb-2"><strong>Founder</strong> @ leafsteal.uk.to (20+ Active Players) • Server Closed</li>
-        <li class="mb-2"><strong>Co-Founder</strong> @ play.hogopogo.in (30+ Active Players) • Server Closed</li>
-        <li class="mb-2"><strong>Junior Developer</strong> @ play.goju-network.fun (20+ Active Players)</li>
-        <li class="mb-2"><strong>Administrator</strong> @ arexorpvp.aternos.me (20+ Active Players)</li>
-        <li class="mb-2"><strong>Administrator</strong> @ play.godspunky.in (? Active Players)</li>
-        <li class="mb-2"><strong>Senior Moderator</strong> @ play.minemate.fun (40+ Active Players)</li>
-        <li class="mb-2"><strong>Helper</strong> @ play.impendmc.net (100+ Active Players)</li>
-        <br>
-        <p>I know my experience seems low, but trust me, I have gained a lot of knowledge from working mostly on <span class="text-blue-400">Hogo</span><span class="text-red-500">Pogo</span> for two years.</p>
-    </ul>
-</div> -->
-            <!-- Google tag (gtag.js) -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM4E7S9PDJ"></script>
-            <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-
-                gtag('config', 'G-QM4E7S9PDJ');
-            </script>
-            <script src="script.js"></script>
+    <script src="script.js" defer></script
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM4E7S9PDJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-QM4E7S9PDJ');
+    </script>
 </body>
 
 </html>

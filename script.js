@@ -120,7 +120,7 @@ function AutoCalculateAge() {
 }
 
 function AutoCalculateYearsOfExperience() {
-    const YearsOfExperienceDate = new Date(2018, 0, 1); // January 1, 2018
+    const YearsOfExperienceDate = new Date(2021, 0, 1); // January 1, 2018
     const today = new Date();
     let years = today.getFullYear() - YearsOfExperienceDate.getFullYear();
 
@@ -145,33 +145,6 @@ setInterval(() => {
         YearsOfExperience.textContent = AutoCalculateYearsOfExperience();
     }
 }, 1000);
-
-function KxoiyDzTwo(id) {
-   const section = document.getElementById(id);
-   const icon = document.getElementById(id + '-icon');
-   section.classList.toggle('hidden');
-   if (section.classList.contains('hidden')) {
-       icon.innerHTML = '<i class="fas fa-plus"></i>';
-   } else {
-       icon.innerHTML = '<i class="fas fa-minus"></i>';
-   }
-}
-
-function SendMessage(message) {
-    const webhookURL = 'https://discord.com/api/webhooks/1324685833261023306/pI4UkvXtGSV0LzgsHWsDlrNXOQ2eIBKSCaV4L_w5YwHd5KVKJeEEmGiM5sFnyn0Fzrtd';
-
-    fetch(webhookURL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: message })
-    })
-    .then(response => {
-        if (!response.ok) {
-            console.error('Failed to send message:', response.statusText);
-        }
-    })
-    .catch(error => console.error('Error sending message:', error));
-}
 
 // Main
 CreateShootingStars();

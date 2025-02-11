@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rusky.is-a.dev</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./libraries/tailwind.min.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
     <link rel="preload" href="./fonts/SimpleHandmade.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="script.js" as="script">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -29,7 +32,7 @@
                     <a class="flex-shrink-0 text-3xl font-bold" href="index.html">Rusky</a>
                 </div>
                 <div class="hidden sm:flex sm:space-x-8">
-                    <a href="" class="text-white hover:text-purple-500 transition duration-500">Home</a>
+                    <a href="./index.html" class="text-white hover:text-purple-500 transition duration-500">Home</a>
                     <a href="./about.html" class="text-white hover:text-purple-500 transition duration-500">About</a>
                     <a href="./contact.html"
                         class="text-white hover:text-purple-500 transition duration-500">Contact</a>
@@ -38,7 +41,7 @@
         </div>
         <div id="MobileNavBar" class="sm:hidden fixed inset-0 bg-black bg-opacity-75 hidden">
             <div class="flex flex-col items-center justify-center h-full space-y-6">
-                <a href="" class="text-white text-4xl hover:text-purple-500 transition duration-500">Home</a>
+                <a href="./index.html" class="text-white text-4xl hover:text-purple-500 transition duration-500">Home</a>
                 <a href="./about.html"
                     class="text-white text-4xl hover:text-purple-500 transition duration-500">About</a>
                 <a href="./contact.html"
@@ -51,8 +54,8 @@
         <div class="px-2 md:px-4">
             <h1 class="text-white text-4xl md:text-4xl mb-4">Hi, I'm <span class="text-purple-600">Ayaan</span>.</h1>
             <p class="text-white text-2xl md:text-4xl">
-                I'm <span class="text-purple-600 age">14.5</span> with
-                <span class="text-purple-600 yearsofexperience">7</span> years of experience in
+                I'm <span class="text-purple-600 age">0</span> with
+                <span class="text-purple-600 yearsofexperience">0</span> years of experience in
                 <a href="./about.html" class="text-purple-600 hover:underline hover:text-opacity-80 transition-all">software engineering</a>.
             </p>                     
             
@@ -61,15 +64,16 @@
                 More</button>
         </div>
     </div>
-    <!-- Google tag (gtag.js) -->
+    <script src="script.js" defer></script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM4E7S9PDJ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
-
         gtag('config', 'G-QM4E7S9PDJ');
     </script>
-    <script src="script.js"></script>
 </body>
 </html>

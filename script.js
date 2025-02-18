@@ -1,3 +1,25 @@
+const HamburgerButton = document.getElementById('HamburgerButton');
+const MobileNavBar = document.getElementById('MobileNavBar');
+
+HamburgerButton.addEventListener('click', (event) => {
+    event.stopPropagation();
+    if (MobileNavBar.classList.contains('hidden')) {
+        MobileNavBar.classList.remove('hidden');
+        HamburgerButton.classList.add('active');
+    } else {
+        MobileNavBar.classList.add('hidden');
+        HamburgerButton.classList.remove('active');
+    }
+});
+
+document.addEventListener('click', () => {
+    if (!MobileNavBar.classList.contains('hidden')) {
+        MobileNavBar.classList.add('hidden');
+        HamburgerButton.classList.remove('active');
+    }
+});
+
+// Functions
 function GetDeviceType() {
     const UserAgent = navigator.userAgent;
     if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(UserAgent)) {
@@ -27,17 +49,26 @@ function CreateShootingStars() {
         });
     }
 
-    if (GetDeviceType() === "desktop") {
+    function startStars() {
         ShootingStarsInterval = setInterval(CreateStar, 200);
+    }
+
+    function stopStars() {
+        clearInterval(ShootingStarsInterval);
+    }
+
+    if (GetDeviceType() === "desktop") {
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
-                clearInterval(ShootingStarsInterval);
+                stopStars();
             } else {
-                ShootingStarsInterval = setInterval(CreateStar, 200);
+                startStars();
             }
         });
-    } else {
-        return
+
+        if (!document.hidden) {
+            startStars();
+        }
     }
 }
 
@@ -60,17 +91,26 @@ function CreateFallingStars() {
         });
     }
 
-    if (GetDeviceType() === "desktop") {
+    function startFallingStars() {
         FallingStarsInterval = setInterval(CreateStar, 100);
+    }
+
+    function stopFallingStars() {
+        clearInterval(FallingStarsInterval);
+    }
+
+    if (GetDeviceType() === "desktop") {
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
-                clearInterval(FallingStarsInterval);
+                stopFallingStars();
             } else {
-                FallingStarsInterval = setInterval(CreateStar, 100);
+                startFallingStars();
             }
         });
-    } else {
-        return;
+
+        if (!document.hidden) {
+            startFallingStars();
+        }
     }
 }
 
@@ -85,21 +125,6 @@ function CreateMouseTrails(e) {
 }
 
 document.addEventListener('mousemove', CreateMouseTrails);
-
-function MobileNavBar() {
-    const HamburgerButton = document.getElementById('HamburgerButton');
-    const MobileNavBar = document.getElementById('MobileNavBar');
-
-    HamburgerButton.addEventListener('click', () => {
-        if (MobileNavBar.classList.contains('hidden')) {
-            MobileNavBar.classList.remove('hidden');
-            HamburgerButton.classList.add('active');
-        } else {
-            MobileNavBar.classList.add('hidden');
-            HamburgerButton.classList.remove('active');
-        }
-    });
-}
 
 function AutoCalculateAge() {
     const BirthDate = new Date(2010, 7, 7); // August 7, 2010
@@ -132,20 +157,20 @@ function AutoCalculateYearsOfExperience() {
     return `${years}`;
 }
 
+// Intervals
 setInterval(() => {
     const Age = document.querySelector('.age');
     if (Age) {
         Age.textContent = AutoCalculateAge();
     }
-}, 1000);
+}, 1);
 
 setInterval(() => {
     const YearsOfExperience = document.querySelector('.yearsofexperience');
     if (YearsOfExperience) {
         YearsOfExperience.textContent = AutoCalculateYearsOfExperience();
     }
-}, 1000);
+}, 1);
 
 // Main
 CreateShootingStars();
-MobileNavBar();

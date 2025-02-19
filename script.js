@@ -114,17 +114,17 @@ function CreateFallingStars() {
     }
 }
 
-function CreateMouseTrails(e) {
-    const trail = document.createElement('div');
-    trail.classList.add('trail');
-    trail.style.left = e.pageX + 'px';
-    trail.style.top = e.pageY + 'px';
-    document.body.appendChild(trail);
+// function CreateMouseTrails(e) {
+//     const trail = document.createElement('div');
+//     trail.classList.add('trail');
+//     trail.style.left = e.pageX + 'px';
+//     trail.style.top = e.pageY + 'px';
+//     document.body.appendChild(trail);
 
-    setTimeout(() => trail.remove(), 1000);
-}
+//     setTimeout(() => trail.remove(), 1000);
+// }
 
-document.addEventListener('mousemove', CreateMouseTrails);
+// document.addEventListener('mousemove', CreateMouseTrails);
 
 function AutoCalculateAge() {
     const BirthDate = new Date(2010, 7, 7); // August 7, 2010

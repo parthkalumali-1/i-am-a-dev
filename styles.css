@@ -11,6 +11,13 @@ body {
     font-size: 32px;
 }
 
+*,
+*:hover,
+*:active,
+*:focus {
+    cursor: url('./images/cursor.png'), auto !important;
+}
+
 .star {
     position: absolute;
     border-radius: 50%;
@@ -19,7 +26,7 @@ body {
     pointer-events: none;
 }
 
-.trail {
+/* .trail {
     position: absolute;
     width: 2px;
     height: 2px;
@@ -29,7 +36,7 @@ body {
     opacity: 0.8;
     transform: translate(-50%, -50%);
     animation: MouseTrails 1s forwards;
-}
+} */
 
 @keyframes FallingStars {
     0% {
@@ -100,7 +107,7 @@ body {
     }
 }
 
-@keyframes MouseTrails {
+/* @keyframes MouseTrails {
     from {
         opacity: 0.8;
         transform: scale(1);
@@ -110,7 +117,7 @@ body {
         opacity: 0;
         transform: scale(2);
     }
-}
+} */
 
 @media (max-width: 768px) {
     .Y9i9ARxJVR {

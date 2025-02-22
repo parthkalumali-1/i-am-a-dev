@@ -34,7 +34,9 @@ Don't even think about inspecting elements on my site or stealing my code. If yo
 const params = new URLSearchParams(window.location.search);
 const redirectUrl = params.get('redirect');
 if (redirectUrl) {
-  window.location.href = redirectUrl;
+  window.location.href = decodeURIComponent(redirectUrl);
+} else {
+  window.location.href = 'index.html';
 }
 
 function GetDeviceType() {

@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Simple Handmade';
-    src: url('./fonts/SimpleHandmade.woff2') format('woff2');
+    src: url('/assets/fonts/SimpleHandmade.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -15,7 +15,7 @@ body {
 *:hover,
 *:active,
 *:focus {
-    cursor: url('./images/cursor.png'), auto !important;
+    cursor: url('./assets/cursor.png'), auto !important;
 }
 
 .star {

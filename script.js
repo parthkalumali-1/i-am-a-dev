@@ -172,5 +172,4 @@ setInterval(() => {
     }
 }, 1);
 
-// Main
 CreateShootingStars();

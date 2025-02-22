@@ -42,6 +42,8 @@ function GetDeviceType() {
 }
 
 function CreateShootingStars() {
+    let shootingStarsInterval;
+
     function CreateStar() {
         const star = document.createElement('div');
         star.classList.add('star');
@@ -59,14 +61,20 @@ function CreateShootingStars() {
     }
 
     function startStars() {
-        CreateStar();
-        setTimeout(startStars, 200);
+        shootingStarsInterval = setInterval(CreateStar, 200);
+    }
+
+    function stopStars() {
+        clearInterval(shootingStarsInterval);
     }
 
     if (GetDeviceType() === "desktop") {
         document.addEventListener('visibilitychange', () => {
-            if (document.hidden) return;
-            startStars();
+            if (document.hidden) {
+                stopStars();
+            } else {
+                startStars();
+            }
         });
 
         if (!document.hidden) {
@@ -76,6 +84,8 @@ function CreateShootingStars() {
 }
 
 function CreateFallingStars() {
+    let fallingStarsInterval;
+
     function CreateStar() {
         const star = document.createElement('div');
         star.classList.add('star');
@@ -93,14 +103,20 @@ function CreateFallingStars() {
     }
 
     function startFallingStars() {
-        CreateStar();
-        setTimeout(startFallingStars, 100);
+        fallingStarsInterval = setInterval(CreateStar, 100);
+    }
+
+    function stopFallingStars() {
+        clearInterval(fallingStarsInterval);
     }
 
     if (GetDeviceType() === "desktop") {
         document.addEventListener('visibilitychange', () => {
-            if (document.hidden) return;
-            startFallingStars();
+            if (document.hidden) {
+                stopFallingStars();
+            } else {
+                startFallingStars();
+            }
         });
 
         if (!document.hidden) {

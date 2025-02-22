@@ -31,6 +31,12 @@ console.log(`
 Don't even think about inspecting elements on my site or stealing my code. If you want to fork this website, visit the repo at https://github.com/RuskyDev/ruskydev.github.io Just make sure to give me credit.\n
 `);
 
+const params = new URLSearchParams(window.location.search);
+const redirectUrl = params.get('redirect');
+if (redirectUrl) {
+  window.location.href = redirectUrl;
+}
+
 function GetDeviceType() {
     const UserAgent = navigator.userAgent;
     if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(UserAgent)) {

@@ -19,7 +19,18 @@ document.addEventListener('click', () => {
     }
 });
 
-// Functions
+console.log(`
+    ____            _          
+   |  _ \\ _   _ ___| | ___   _ 
+   | |_) | | | / __| |/ / | | |
+   |  _ <| |_| \\__ \\   <| |_| |
+   |_| \\_\\__,_|___/_|\\_\\__, |
+                         |___/  
+ © ${new Date().getFullYear()} RuskyDev - https://rusky.is-a.dev\n
+
+Don't even think about inspecting elements on my site or stealing my code. If you want to fork this website, visit the repo at https://github.com/RuskyDev/ruskydev.github.io Just make sure to give me credit.\n
+`);
+
 function GetDeviceType() {
     const UserAgent = navigator.userAgent;
     if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(UserAgent)) {
@@ -31,8 +42,6 @@ function GetDeviceType() {
 }
 
 function CreateShootingStars() {
-    let ShootingStarsInterval;
-
     function CreateStar() {
         const star = document.createElement('div');
         star.classList.add('star');
@@ -50,20 +59,14 @@ function CreateShootingStars() {
     }
 
     function startStars() {
-        ShootingStarsInterval = setInterval(CreateStar, 200);
-    }
-
-    function stopStars() {
-        clearInterval(ShootingStarsInterval);
+        CreateStar();
+        setTimeout(startStars, 200);
     }
 
     if (GetDeviceType() === "desktop") {
         document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                stopStars();
-            } else {
-                startStars();
-            }
+            if (document.hidden) return;
+            startStars();
         });
 
         if (!document.hidden) {
@@ -73,8 +76,6 @@ function CreateShootingStars() {
 }
 
 function CreateFallingStars() {
-    let FallingStarsInterval;
-
     function CreateStar() {
         const star = document.createElement('div');
         star.classList.add('star');
@@ -92,20 +93,14 @@ function CreateFallingStars() {
     }
 
     function startFallingStars() {
-        FallingStarsInterval = setInterval(CreateStar, 100);
-    }
-
-    function stopFallingStars() {
-        clearInterval(FallingStarsInterval);
+        CreateStar();
+        setTimeout(startFallingStars, 100);
     }
 
     if (GetDeviceType() === "desktop") {
         document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                stopFallingStars();
-            } else {
-                startFallingStars();
-            }
+            if (document.hidden) return;
+            startFallingStars();
         });
 
         if (!document.hidden) {
@@ -114,20 +109,8 @@ function CreateFallingStars() {
     }
 }
 
-// function CreateMouseTrails(e) {
-//     const trail = document.createElement('div');
-//     trail.classList.add('trail');
-//     trail.style.left = e.pageX + 'px';
-//     trail.style.top = e.pageY + 'px';
-//     document.body.appendChild(trail);
-
-//     setTimeout(() => trail.remove(), 1000);
-// }
-
-// document.addEventListener('mousemove', CreateMouseTrails);
-
 function AutoCalculateAge() {
-    const BirthDate = new Date(2010, 7, 7); // August 7, 2010
+    const BirthDate = new Date(2010, 7, 7);
     const today = new Date();
     let years = today.getFullYear() - BirthDate.getFullYear();
     let months = today.getMonth() - BirthDate.getMonth();
@@ -145,7 +128,7 @@ function AutoCalculateAge() {
 }
 
 function AutoCalculateYearsOfExperience() {
-    const YearsOfExperienceDate = new Date(2021, 0, 1); // January 1, 2018
+    const YearsOfExperienceDate = new Date(2021, 0, 1);
     const today = new Date();
     let years = today.getFullYear() - YearsOfExperienceDate.getFullYear();
 
@@ -157,19 +140,23 @@ function AutoCalculateYearsOfExperience() {
     return `${years}`;
 }
 
-// Intervals
-setInterval(() => {
+function UpdateAge() {
     const Age = document.querySelector('.age');
     if (Age) {
         Age.textContent = AutoCalculateAge();
     }
-}, 1);
+    requestAnimationFrame(UpdateAge);
+}
 
-setInterval(() => {
+function UpdateYearsOfExperience() {
     const YearsOfExperience = document.querySelector('.yearsofexperience');
     if (YearsOfExperience) {
         YearsOfExperience.textContent = AutoCalculateYearsOfExperience();
     }
-}, 1);
+    requestAnimationFrame(UpdateYearsOfExperience);
+}
+
+requestAnimationFrame(UpdateAge);
+requestAnimationFrame(UpdateYearsOfExperience);
 
 CreateShootingStars();

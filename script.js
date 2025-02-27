@@ -34,7 +34,7 @@ Don't even think about inspecting elements on my site or stealing my code. If yo
 const params = new URLSearchParams(window.location.search);
 const redirectUrl = params.get('redirect');
 if (redirectUrl) {
-  window.location.href = redirectUrl;
+    window.location.href = redirectUrl;
 }
 
 function GetDeviceType() {
@@ -53,8 +53,8 @@ function CreateShootingStars() {
     function CreateStar() {
         const star = document.createElement('div');
         star.classList.add('star');
-        star.style.width = '2px';
-        star.style.height = '2px';
+        star.style.width = '4px';
+        star.style.height = '4px';
         star.style.left = Math.random() * window.innerWidth + 'px';
         star.style.top = Math.random() * window.innerHeight + 'px';
         star.style.animation = `ShootingStars 2s linear`;

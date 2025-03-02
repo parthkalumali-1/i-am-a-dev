@@ -40,7 +40,7 @@
                 <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
                     <button id="HamburgerButton" class="inline-flex items-center justify-center p-4 rounded-md text-white z-50">
                         <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoi n="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
                     </button>
                 </div>
@@ -65,12 +65,10 @@
         </div>
     </nav>
     
-    <!-- TODO: Fix the issue where opening the navbar on mobile doesn't make the card hide behind the navigation bar's overlay. -->
-    <!-- TODO: Fix the card width, make it vertical, ensure all text fits on one line, and resolve any positioning issues or bugs. -->
-    <!-- <div class="flex-1 flex flex-col items-start text-left overflow-auto py-8 pt-4 sm:pt-8 sm:ml-20 ml-5 ">
+    <div class="flex-1 flex flex-col items-start text-left overflow-auto py-8 pt-4 sm:pt-8 sm:ml-20 ml-5 ">
         <h2 class="text-white text-5xl font-semibold mb-8">Projects</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 mr-5">
-            <div class="group relative border-2 border-white rounded-lg p-4 transition-transform duration-300 hover:scale-105 cursor-pointer h-50 w-full md:w-50 sm:w-50" onclick="window.open('https://github.com/RuskyDev/concise-logging', '_blank');">
+            <div class="group relative border-2 border-white rounded-lg p-4 transition-transform duration-300 hover:scale-105 cursor-pointer h-50 w-full md:w-50 sm:w-50 animate-fade-in" onclick="window.open('https://github.com/RuskyDev/concise-logging', '_blank');">
                 <h3 class="text-white text-1xl font-semibold">Concise Logging</h3>
                 <p class="text-white opacity-70">Advanced yet easy-to-use logging library available for both Node.js and Python.</p>
                 <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
@@ -78,13 +76,8 @@
                 </div>
             </div>
         </div>
-    </div> -->
-
-    <div class="flex-1 flex items-center justify-center text-center Y9i9ARxJVR">
-        <div class="px-2 md:px-4">
-            <h1 class="text-white text-4xl md:text-4xl mb-4">Due to some issues with the stylesheets, this page is currently disabled.</h1>
-        </div>
     </div>
+
     <script src="script.js" defer></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM4E7S9PDJ"></script>

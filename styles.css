@@ -11,12 +11,32 @@ body {
     font-size: 32px;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
 *,
 *:hover,
 *:active,
 *:focus {
     cursor: url('./assets/cursor.png'), auto !important;
 }
+
+#MobileNavBar {
+    z-index: 50;
+    /* Higher than any other elements */
+    position: fixed;
+}
+
 
 .star {
     position: absolute;
@@ -43,6 +63,7 @@ body {
         transform: translateY(0);
         opacity: 1;
     }
+
     100% {
         transform: translateY(100vh);
         opacity: 0.5;
@@ -78,7 +99,7 @@ body {
     transition: opacity 0.2s;
     max-width: fit-content;
     text-align: center;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 .tooltip:hover::after,

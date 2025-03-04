@@ -37,6 +37,8 @@ if (redirectUrl) {
     window.location.href = redirectUrl;
 }
 
+const starContainer = document.body;
+
 function GetDeviceType() {
     const UserAgent = navigator.userAgent;
     if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(UserAgent)) {
@@ -53,11 +55,10 @@ function CreateShootingStars() {
     function CreateStar() {
         const star = document.createElement('div');
         star.classList.add('star');
-        star.style.width = '4px';
-        star.style.height = '4px';
+        star.style.width = '3px';
+        star.style.height = '3px';
         star.style.left = Math.random() * window.innerWidth + 'px';
-        star.style.top = Math.random() * window.innerHeight + 'px';
-        star.style.animation = `ShootingStars 2s linear`;
+        star.style.animation = `ShootingStars 5s ease-in-out`;
 
         document.body.appendChild(star);
 
@@ -67,7 +68,7 @@ function CreateShootingStars() {
     }
 
     function startStars() {
-        shootingStarsInterval = setInterval(CreateStar, 200);
+        shootingStarsInterval = setInterval(CreateStar, 5000); // Make them appear less frequently
     }
 
     function stopStars() {
@@ -88,6 +89,19 @@ function CreateShootingStars() {
         }
     }
 }
+
+function twinkleStar() {
+    for (let i = 0; i < 10; i++) {
+        let star = document.createElement("div");
+        star.classList.add("sparkle-star");
+        star.style.top = `${Math.random() * 100}vh`;
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.animationDuration = `${2 + Math.random() * 4}s`;
+        starContainer.appendChild(star);
+    }
+}
+
+twinkleStar();
 
 function CreateFallingStars() {
     let fallingStarsInterval;
@@ -180,5 +194,115 @@ function UpdateYearsOfExperience() {
 
 requestAnimationFrame(UpdateAge);
 requestAnimationFrame(UpdateYearsOfExperience);
+
+function setupFlyingButton(buttonId, targetHref) {
+    const button = document.getElementById(buttonId);
+    if (!button) return;
+
+    if (GetDeviceType() !== "desktop") {
+        button.addEventListener("click", function () {
+            window.location.href = targetHref;
+        });
+        return;
+    }
+
+    button.addEventListener("click", function (e) {
+        e.currentTarget.disabled = true;
+        document.body.classList.add("hidden-cursor");
+
+        const plane = document.createElement("div");
+        plane.className = "paper-plane";
+        plane.innerHTML = "✈️";
+
+        const buttonRect = button.getBoundingClientRect();
+        const startX = buttonRect.left + buttonRect.width / 2 - 12;
+        const startY = buttonRect.top + buttonRect.height / 2 - 12;
+        plane.style.left = `${startX}px`;
+        plane.style.top = `${startY}px`;
+        document.body.appendChild(plane);
+
+        const targetLink = document.querySelector(`a[href="${targetHref}"]`);
+        if (!targetLink) {
+            plane.remove();
+            return;
+        }
+
+        const targetRect = targetLink.getBoundingClientRect();
+        const endX = targetRect.left + targetRect.width / 2 - 12;
+        const endY = targetRect.top + targetRect.height / 2 - 12;
+
+        setTimeout(() => {
+            plane.style.left = `${endX}px`;
+            plane.style.top = `${endY}px`;
+        }, 50);
+
+        setTimeout(() => {
+            plane.remove();
+            targetLink.click();
+        }, 1000);
+    });
+}
+
+setupFlyingButton("LearnMore", "about.html");
+setupFlyingButton("CheckThemOutHere", "projects.html");
+
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        const moon = document.createElement("div");
+        moon.classList.add("moon");
+
+        const edgePadding = 50; // Keep moon near screen edges
+
+        let randomX = Math.random() * window.innerWidth;
+        let randomY = Math.random() * window.innerHeight;
+
+        // Force it to appear near screen edges
+        if (Math.random() > 0.5) {
+            randomX = Math.random() > 0.5 ? edgePadding : window.innerWidth - edgePadding;
+        } else {
+            randomY = Math.random() > 0.5 ? edgePadding : window.innerHeight - edgePadding;
+        }
+
+        moon.style.left = `${randomX}px`;
+        moon.style.top = `${randomY}px`;
+
+        document.body.appendChild(moon);
+    }, 3000); // 3-second delay before appearing
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const now = new Date();
+    const hour = now.getHours();
+    if (hour >= 20 || hour < 6) {
+        const audio = new Audio("/assets/sounds/night-ambience.mp3");
+        audio.loop = true;
+        audio.volume = 0;
+
+        const startAudio = () => {
+            audio.play().then(() => {
+                let fadeIn = setInterval(() => {
+                    if (audio.volume < 0.1) {
+                        audio.volume = Math.min(audio.volume + 0.02, 0.1);
+                    } else {
+                        clearInterval(fadeIn);
+                    }
+                }, 1000); // Faster fade-in for a smoother experience
+            }).catch(err => console.error("Audio playback failed:", err));
+
+            document.removeEventListener("click", startAudio);
+        };
+
+        document.addEventListener("click", startAudio);
+    }
+});
+
+function keepOnlyStarsAndMoon() {
+    document.body.querySelectorAll('*').forEach(element => {
+        if (![...element.classList].some(cls => ['star', 'sparkle-star', 'moon'].includes(cls))) {
+            element.remove();
+        }
+    });
+}
+
 
 CreateShootingStars();

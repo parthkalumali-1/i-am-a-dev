@@ -68,7 +68,7 @@ function CreateShootingStars() {
     }
 
     function startStars() {
-        shootingStarsInterval = setInterval(CreateStar, 5000); // Make them appear less frequently
+        shootingStarsInterval = setInterval(CreateStar, 5000);  
     }
 
     function stopStars() {
@@ -91,7 +91,7 @@ function CreateShootingStars() {
 }
 
 function twinkleStar() {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 8; i++) {
         let star = document.createElement("div");
         star.classList.add("sparkle-star");
         star.style.top = `${Math.random() * 100}vh`;
@@ -100,8 +100,6 @@ function twinkleStar() {
         starContainer.appendChild(star);
     }
 }
-
-twinkleStar();
 
 function CreateFallingStars() {
     let fallingStarsInterval;
@@ -246,55 +244,10 @@ function setupFlyingButton(buttonId, targetHref) {
 setupFlyingButton("LearnMore", "about.html");
 setupFlyingButton("CheckThemOutHere", "projects.html");
 
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-        const moon = document.createElement("div");
-        moon.classList.add("moon");
-
-        const edgePadding = 50; // Keep moon near screen edges
-
-        let randomX = Math.random() * window.innerWidth;
-        let randomY = Math.random() * window.innerHeight;
-
-        // Force it to appear near screen edges
-        if (Math.random() > 0.5) {
-            randomX = Math.random() > 0.5 ? edgePadding : window.innerWidth - edgePadding;
-        } else {
-            randomY = Math.random() > 0.5 ? edgePadding : window.innerHeight - edgePadding;
-        }
-
-        moon.style.left = `${randomX}px`;
-        moon.style.top = `${randomY}px`;
-
-        document.body.appendChild(moon);
-    }, 3000); // 3-second delay before appearing
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const now = new Date();
-    const hour = now.getHours();
-    if (hour >= 20 || hour < 6) {
-        const audio = new Audio("/assets/sounds/night-ambience.mp3");
-        audio.loop = true;
-        audio.volume = 0;
-
-        const startAudio = () => {
-            audio.play().then(() => {
-                let fadeIn = setInterval(() => {
-                    if (audio.volume < 0.1) {
-                        audio.volume = Math.min(audio.volume + 0.02, 0.1);
-                    } else {
-                        clearInterval(fadeIn);
-                    }
-                }, 1000); // Faster fade-in for a smoother experience
-            }).catch(err => console.error("Audio playback failed:", err));
-
-            document.removeEventListener("click", startAudio);
-        };
-
-        document.addEventListener("click", startAudio);
-    }
-});
+if (GetDeviceType() === "desktop") {
+    CreateShootingStars();
+    twinkleStar();
+}
 
 function keepOnlyStarsAndMoon() {
     document.body.querySelectorAll('*').forEach(element => {
@@ -303,6 +256,3 @@ function keepOnlyStarsAndMoon() {
         }
     });
 }
-
-
-CreateShootingStars();

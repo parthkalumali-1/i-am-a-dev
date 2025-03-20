@@ -19,18 +19,6 @@ document.addEventListener('click', () => {
     }
 });
 
-console.log(`
-    ____            _          
-   |  _ \\ _   _ ___| | ___   _ 
-   | |_) | | | / __| |/ / | | |
-   |  _ <| |_| \\__ \\   <| |_| |
-   |_| \\_\\__,_|___/_|\\_\\__, |
-                         |___/  
- © ${new Date().getFullYear()} RuskyDev - https://rusky.is-a.dev\n
-
-Don't even think about inspecting elements on my site or stealing my code. If you want to fork this website, visit the repo at https://github.com/RuskyDev/ruskydev.github.io Just make sure to give me credit.\n
-`);
-
 const params = new URLSearchParams(window.location.search);
 const redirectUrl = params.get('redirect');
 if (redirectUrl) {
@@ -158,11 +146,11 @@ function AutoCalculateAge() {
         months += 12;
     }
 
-    return `${years}.${months.toString()}`;
+    return `${years}`;
 }
 
 function AutoCalculateYearsOfExperience() {
-    const YearsOfExperienceDate = new Date(2021, 0, 1);
+    const YearsOfExperienceDate = new Date(2020, 0, 1);
     const today = new Date();
     let years = today.getFullYear() - YearsOfExperienceDate.getFullYear();
 
@@ -247,12 +235,4 @@ setupFlyingButton("CheckThemOutHere", "projects.html");
 if (GetDeviceType() === "desktop") {
     CreateShootingStars();
     twinkleStar();
-}
-
-function keepOnlyStarsAndMoon() {
-    document.body.querySelectorAll('*').forEach(element => {
-        if (![...element.classList].some(cls => ['star', 'sparkle-star', 'moon'].includes(cls))) {
-            element.remove();
-        }
-    });
 }

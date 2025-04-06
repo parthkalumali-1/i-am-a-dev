@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://rusky.is-a.dev/sitemap.xml
+Sitemap: https://Parth.is-a.dev/sitemap.xml
